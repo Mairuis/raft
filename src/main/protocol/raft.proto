@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package raft_proto;
+
+message Entry {
+  string key = 1;
+  string value = 2;
+}
