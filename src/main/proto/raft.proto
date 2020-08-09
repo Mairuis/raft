@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.mairuis.raft.proto;
+
+message Vote {
+  //所在周期
+  int32 term = 1;
+  //投给那个实例
+  int32 serverId = 2;
+  //最大事务Id
+  int32 txnId = 3;
+}
+
+service Peer {
+  rpc VoteTo(Vote) returns (Vote) {}
+}

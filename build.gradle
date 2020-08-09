@@ -1,9 +1,20 @@
 plugins {
     id 'java'
+    id 'com.google.protobuf' version '0.8.12'
+}
+
+def grpcVersion = '1.31.0'
+def protobufVersion = '3.12.0'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
 
 group 'com.mairuis'
 version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -12,4 +23,30 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     implementation 'io.netty:netty-parent:4.1.51.Final'
+
+    //gRPC
+    implementation "io.grpc:grpc-netty-shaded:${grpcVersion}"
+    implementation "io.grpc:grpc-protobuf:${grpcVersion}"
+    implementation "io.grpc:grpc-stub:${grpcVersion}"
+    implementation "com.google.protobuf:protobuf-java-util:${protobufVersion}"
+    implementation "io.grpc:protoc-gen-grpc-java:${grpcVersion}"
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:${protobufVersion}"
+    }
+    plugins {
+        grpc {
+            artifact = "io.grpc:protoc-gen-grpc-java:${grpcVersion}"
+        }
+    }
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {
+                outputSubDir = 'java'
+            }
+        }
+    }
+    generatedFilesBaseDir = "$projectDir/src/"
 }
