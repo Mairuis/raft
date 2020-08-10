@@ -14,4 +14,7 @@ public final class PeerClient {
         this.stub = RaftServiceGrpc.newStub(channel);
     }
 
+    public void vote() {
+
+    }
 }
