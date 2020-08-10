@@ -20,191 +20,191 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.31.0)",
     comments = "Source: raft.proto")
-public final class PeerGrpc {
+public final class RaftServiceGrpc {
 
-  private PeerGrpc() {}
+  private RaftServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "com.mairuis.raft.proto.Peer";
+  public static final String SERVICE_NAME = "com.mairuis.raft.proto.RaftService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.mairuis.raft.proto.Raft.Vote,
-      com.mairuis.raft.proto.Raft.Vote> getVoteToMethod;
+      com.mairuis.raft.proto.Raft.VoteReply> getVoteMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "VoteTo",
+      fullMethodName = SERVICE_NAME + '/' + "vote",
       requestType = com.mairuis.raft.proto.Raft.Vote.class,
-      responseType = com.mairuis.raft.proto.Raft.Vote.class,
+      responseType = com.mairuis.raft.proto.Raft.VoteReply.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.mairuis.raft.proto.Raft.Vote,
-      com.mairuis.raft.proto.Raft.Vote> getVoteToMethod() {
-    io.grpc.MethodDescriptor<com.mairuis.raft.proto.Raft.Vote, com.mairuis.raft.proto.Raft.Vote> getVoteToMethod;
-    if ((getVoteToMethod = PeerGrpc.getVoteToMethod) == null) {
-      synchronized (PeerGrpc.class) {
-        if ((getVoteToMethod = PeerGrpc.getVoteToMethod) == null) {
-          PeerGrpc.getVoteToMethod = getVoteToMethod =
-              io.grpc.MethodDescriptor.<com.mairuis.raft.proto.Raft.Vote, com.mairuis.raft.proto.Raft.Vote>newBuilder()
+      com.mairuis.raft.proto.Raft.VoteReply> getVoteMethod() {
+    io.grpc.MethodDescriptor<com.mairuis.raft.proto.Raft.Vote, com.mairuis.raft.proto.Raft.VoteReply> getVoteMethod;
+    if ((getVoteMethod = RaftServiceGrpc.getVoteMethod) == null) {
+      synchronized (RaftServiceGrpc.class) {
+        if ((getVoteMethod = RaftServiceGrpc.getVoteMethod) == null) {
+          RaftServiceGrpc.getVoteMethod = getVoteMethod =
+              io.grpc.MethodDescriptor.<com.mairuis.raft.proto.Raft.Vote, com.mairuis.raft.proto.Raft.VoteReply>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VoteTo"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "vote"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.mairuis.raft.proto.Raft.Vote.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.mairuis.raft.proto.Raft.Vote.getDefaultInstance()))
-              .setSchemaDescriptor(new PeerMethodDescriptorSupplier("VoteTo"))
+                  com.mairuis.raft.proto.Raft.VoteReply.getDefaultInstance()))
+              .setSchemaDescriptor(new RaftServiceMethodDescriptorSupplier("vote"))
               .build();
         }
       }
     }
-    return getVoteToMethod;
+    return getVoteMethod;
   }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
-  public static PeerStub newStub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<PeerStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<PeerStub>() {
+  public static RaftServiceStub newStub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<RaftServiceStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<RaftServiceStub>() {
         @java.lang.Override
-        public PeerStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new PeerStub(channel, callOptions);
+        public RaftServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new RaftServiceStub(channel, callOptions);
         }
       };
-    return PeerStub.newStub(factory, channel);
+    return RaftServiceStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static PeerBlockingStub newBlockingStub(
+  public static RaftServiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<PeerBlockingStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<PeerBlockingStub>() {
+    io.grpc.stub.AbstractStub.StubFactory<RaftServiceBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<RaftServiceBlockingStub>() {
         @java.lang.Override
-        public PeerBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new PeerBlockingStub(channel, callOptions);
+        public RaftServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new RaftServiceBlockingStub(channel, callOptions);
         }
       };
-    return PeerBlockingStub.newStub(factory, channel);
+    return RaftServiceBlockingStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new ListenableFuture-style stub that supports unary calls on the service
    */
-  public static PeerFutureStub newFutureStub(
+  public static RaftServiceFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<PeerFutureStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<PeerFutureStub>() {
+    io.grpc.stub.AbstractStub.StubFactory<RaftServiceFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<RaftServiceFutureStub>() {
         @java.lang.Override
-        public PeerFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new PeerFutureStub(channel, callOptions);
+        public RaftServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new RaftServiceFutureStub(channel, callOptions);
         }
       };
-    return PeerFutureStub.newStub(factory, channel);
+    return RaftServiceFutureStub.newStub(factory, channel);
   }
 
   /**
    */
-  public static abstract class PeerImplBase implements io.grpc.BindableService {
+  public static abstract class RaftServiceImplBase implements io.grpc.BindableService {
 
     /**
      */
-    public void voteTo(com.mairuis.raft.proto.Raft.Vote request,
-        io.grpc.stub.StreamObserver<com.mairuis.raft.proto.Raft.Vote> responseObserver) {
-      asyncUnimplementedUnaryCall(getVoteToMethod(), responseObserver);
+    public void vote(com.mairuis.raft.proto.Raft.Vote request,
+        io.grpc.stub.StreamObserver<com.mairuis.raft.proto.Raft.VoteReply> responseObserver) {
+      asyncUnimplementedUnaryCall(getVoteMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getVoteToMethod(),
+            getVoteMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 com.mairuis.raft.proto.Raft.Vote,
-                com.mairuis.raft.proto.Raft.Vote>(
-                  this, METHODID_VOTE_TO)))
+                com.mairuis.raft.proto.Raft.VoteReply>(
+                  this, METHODID_VOTE)))
           .build();
     }
   }
 
   /**
    */
-  public static final class PeerStub extends io.grpc.stub.AbstractAsyncStub<PeerStub> {
-    private PeerStub(
+  public static final class RaftServiceStub extends io.grpc.stub.AbstractAsyncStub<RaftServiceStub> {
+    private RaftServiceStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected PeerStub build(
+    protected RaftServiceStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new PeerStub(channel, callOptions);
+      return new RaftServiceStub(channel, callOptions);
     }
 
     /**
      */
-    public void voteTo(com.mairuis.raft.proto.Raft.Vote request,
-        io.grpc.stub.StreamObserver<com.mairuis.raft.proto.Raft.Vote> responseObserver) {
+    public void vote(com.mairuis.raft.proto.Raft.Vote request,
+        io.grpc.stub.StreamObserver<com.mairuis.raft.proto.Raft.VoteReply> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getVoteToMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getVoteMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
   /**
    */
-  public static final class PeerBlockingStub extends io.grpc.stub.AbstractBlockingStub<PeerBlockingStub> {
-    private PeerBlockingStub(
+  public static final class RaftServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<RaftServiceBlockingStub> {
+    private RaftServiceBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected PeerBlockingStub build(
+    protected RaftServiceBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new PeerBlockingStub(channel, callOptions);
+      return new RaftServiceBlockingStub(channel, callOptions);
     }
 
     /**
      */
-    public com.mairuis.raft.proto.Raft.Vote voteTo(com.mairuis.raft.proto.Raft.Vote request) {
+    public com.mairuis.raft.proto.Raft.VoteReply vote(com.mairuis.raft.proto.Raft.Vote request) {
       return blockingUnaryCall(
-          getChannel(), getVoteToMethod(), getCallOptions(), request);
+          getChannel(), getVoteMethod(), getCallOptions(), request);
     }
   }
 
   /**
    */
-  public static final class PeerFutureStub extends io.grpc.stub.AbstractFutureStub<PeerFutureStub> {
-    private PeerFutureStub(
+  public static final class RaftServiceFutureStub extends io.grpc.stub.AbstractFutureStub<RaftServiceFutureStub> {
+    private RaftServiceFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected PeerFutureStub build(
+    protected RaftServiceFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new PeerFutureStub(channel, callOptions);
+      return new RaftServiceFutureStub(channel, callOptions);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.mairuis.raft.proto.Raft.Vote> voteTo(
+    public com.google.common.util.concurrent.ListenableFuture<com.mairuis.raft.proto.Raft.VoteReply> vote(
         com.mairuis.raft.proto.Raft.Vote request) {
       return futureUnaryCall(
-          getChannel().newCall(getVoteToMethod(), getCallOptions()), request);
+          getChannel().newCall(getVoteMethod(), getCallOptions()), request);
     }
   }
 
-  private static final int METHODID_VOTE_TO = 0;
+  private static final int METHODID_VOTE = 0;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final PeerImplBase serviceImpl;
+    private final RaftServiceImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(PeerImplBase serviceImpl, int methodId) {
+    MethodHandlers(RaftServiceImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -213,9 +213,9 @@ public final class PeerGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_VOTE_TO:
-          serviceImpl.voteTo((com.mairuis.raft.proto.Raft.Vote) request,
-              (io.grpc.stub.StreamObserver<com.mairuis.raft.proto.Raft.Vote>) responseObserver);
+        case METHODID_VOTE:
+          serviceImpl.vote((com.mairuis.raft.proto.Raft.Vote) request,
+              (io.grpc.stub.StreamObserver<com.mairuis.raft.proto.Raft.VoteReply>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -233,9 +233,9 @@ public final class PeerGrpc {
     }
   }
 
-  private static abstract class PeerBaseDescriptorSupplier
+  private static abstract class RaftServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
-    PeerBaseDescriptorSupplier() {}
+    RaftServiceBaseDescriptorSupplier() {}
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
@@ -244,21 +244,21 @@ public final class PeerGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
-      return getFileDescriptor().findServiceByName("Peer");
+      return getFileDescriptor().findServiceByName("RaftService");
     }
   }
 
-  private static final class PeerFileDescriptorSupplier
-      extends PeerBaseDescriptorSupplier {
-    PeerFileDescriptorSupplier() {}
+  private static final class RaftServiceFileDescriptorSupplier
+      extends RaftServiceBaseDescriptorSupplier {
+    RaftServiceFileDescriptorSupplier() {}
   }
 
-  private static final class PeerMethodDescriptorSupplier
-      extends PeerBaseDescriptorSupplier
+  private static final class RaftServiceMethodDescriptorSupplier
+      extends RaftServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
     private final String methodName;
 
-    PeerMethodDescriptorSupplier(String methodName) {
+    RaftServiceMethodDescriptorSupplier(String methodName) {
       this.methodName = methodName;
     }
 
@@ -273,12 +273,12 @@ public final class PeerGrpc {
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     io.grpc.ServiceDescriptor result = serviceDescriptor;
     if (result == null) {
-      synchronized (PeerGrpc.class) {
+      synchronized (RaftServiceGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new PeerFileDescriptorSupplier())
-              .addMethod(getVoteToMethod())
+              .setSchemaDescriptor(new RaftServiceFileDescriptorSupplier())
+              .addMethod(getVoteMethod())
               .build();
         }
       }
